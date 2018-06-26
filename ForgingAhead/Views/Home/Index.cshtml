@@ -2,7 +2,7 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+@*<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -103,4 +103,24 @@
             <li><a href="https://go.microsoft.com/fwlink/?LinkID=398609">Publish to Microsoft Azure Web Apps</a></li>
         </ul>
     </div>
+</div>*@
+
+@model List<ForgingAhead.Models.Equipment>
+<h2>Equipment:</h2>
+<form asp-controller="Home" asp-action="Create" class="form-inline mbm">
+    <div class="form-group">
+        <input class="form-control" name="EquipmentName" />
+        <input class="btn" type="submit" value="Add Equipment" />
+    </div>
+</form>
+<h4>Equipment:</h4>
+<div>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>
+                <label>@item.Name</label>
+            </li>
+        }
+    </ul>
 </div>

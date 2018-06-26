@@ -9,6 +9,10 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace ForgingAhead
 {
+    // This is using the example from PluralSight - ASP.NET Core - creating a basic WebApp
+    // https://app.pluralsight.com/interactive-courses/detail/7c148b98-ec0b-4b38-ab61-16d0e445c5c1
+    // An interesting learning tool for basic Web App development.
+
     public class Startup
     {
         public Startup(IConfiguration configuration)

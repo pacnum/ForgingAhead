@@ -12,7 +12,7 @@ namespace ForgingAhead.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return View(Equipment.GetAll());
         }
 
         public IActionResult About()
@@ -32,6 +32,12 @@ namespace ForgingAhead.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        public IActionResult Create(string EquipmentName)
+        {
+            Equipment.Create(EquipmentName);
+
+            return RedirectToAction("Index");
         }
     }
 }
